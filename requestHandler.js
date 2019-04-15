@@ -8,8 +8,8 @@ function writeTxt(response) {
 function writeJson(response) {
     console.log('write JSON has been logged');
     response.writeHead(200, 'Content-Type', 'application/json');
-    response.write({ text: 'hi'});
-    response.end();
+    const json = response.write({ text: 'hi'});
+    response.end(JSON.stringify(json));
 }
 
 exports.writeTxt = writeTxt;
